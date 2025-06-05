@@ -60,6 +60,19 @@ public class PedidoUnitTeste {
 
 
     @Test
+    void deveCancelarPedidoComItens() {
+        pedido.adicionarItem("Item", 15.0, 2);
+        pedido.cancelarPedido();
+        assertTrue(pedido.getItens().isEmpty());
+    }
+
+
+    @Test
+    public void testeGetId() {
+        assertEquals(1, pedido.getId());
+    }
+
+    @Test
     public void testeGetCliente() {
         assertEquals("Cliente teste.", pedido.getCliente());
     }
